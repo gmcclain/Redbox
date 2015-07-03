@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROCESS model-entity="JSFProcess">
+ <PROCESS-ITEM NAME="rules:#home.xhtml" PATH="/home.xhtml"
+  SHAPE="528,17,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#home.xhtml:0" NAME="item" PATH="/home.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="login::#login.xhtml" NAME="output"
+    PATH="/login.xhtml" TARGET="rules:#login.xhtml" TITLE="login" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="registration::#registration.xhtml"
+    NAME="output1" PATH="/registration.xhtml"
+    TARGET="rules:#registration.xhtml" TITLE="registration" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#registration.xhtml"
+  PATH="/registration.xhtml" SHAPE="752,33,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#registration.xhtml:0" NAME="item"
+   PATH="/registration.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="homePage::#home.xhtml" NAME="output"
+    PATH="/home.xhtml" TARGET="rules:#home.xhtml" TITLE="homePage" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#login.xhtml" PATH="/login.xhtml"
+  SHAPE="32,17,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#login.xhtml:0" NAME="item"
+   PATH="/login.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="home::#home.xhtml" NAME="output"
+    PATH="/home.xhtml" TARGET="rules:#home.xhtml" TITLE="home" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="search::#search.xhtml" NAME="output1"
+    PATH="/search.xhtml" TARGET="rules:#search.xhtml" TITLE="search" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#search.xhtml" PATH="/search.xhtml"
+  SHAPE="272,353,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#search.xhtml:0" NAME="item"
+   PATH="/search.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="home::#home.xhtml" NAME="output"
+    PATH="/home.xhtml" TARGET="rules:#home.xhtml" TITLE="home" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="renting::#renting.xhtml" NAME="output1"
+    PATH="/renting.xhtml" TARGET="rules:#renting.xhtml" TITLE="renting" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="cart::#cart.xhtml" NAME="output2"
+    PATH="/cart.xhtml" TARGET="rules:#cart.xhtml" TITLE="cart" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="user::#user.xhtml" NAME="output3"
+    PATH="/user.xhtml" TARGET="rules:#user.xhtml" TITLE="user" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#renting.xhtml" PATH="/renting.xhtml"
+  SHAPE="496,593,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#renting.xhtml:0" NAME="item"
+   PATH="/renting.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="search::#search.xhtml" NAME="output"
+    PATH="/search.xhtml" TARGET="rules:#search.xhtml" TITLE="search" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#cart.xhtml" PATH="/cart.xhtml"
+  SHAPE="496,305,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#cart.xhtml:0" NAME="item" PATH="/cart.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="search::#search.xhtml" NAME="output"
+    PATH="/search.xhtml" TARGET="rules:#search.xhtml" TITLE="search" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#user.xhtml" PATH="/user.xhtml"
+  SHAPE="528,385,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#user.xhtml:0" NAME="item" PATH="/user.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="search::#search.xhtml" NAME="output"
+    PATH="/search.xhtml" TARGET="rules:#search.xhtml" TITLE="search" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="home::#home.xhtml" NAME="output1"
+    PATH="/home.xhtml" TARGET="rules:#home.xhtml" TITLE="home" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+</PROCESS>

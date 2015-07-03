@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="show_sql">true</property>
+        <mapping resource="com/cooksys/finals/SalesByFilmCategory.hbm.xml" />
+        <mapping resource="com/cooksys/finals/Inventory.hbm.xml" />
+        <mapping resource="com/cooksys/finals/FilmList.hbm.xml" />
+        <mapping resource="com/cooksys/finals/Rental.hbm.xml" />
+        <mapping resource="com/cooksys/finals/SalesByStore.hbm.xml" />
+        <mapping resource="com/cooksys/finals/Language.hbm.xml" />
+        <mapping resource="com/cooksys/finals/Payment.hbm.xml" />
+        <mapping resource="com/cooksys/finals/NicerButSlowerFilmList.hbm.xml" />
+        <mapping resource="com/cooksys/finals/Country.hbm.xml" />
+        <mapping resource="com/cooksys/finals/Customer.hbm.xml" />
+        <mapping resource="com/cooksys/finals/Actor.hbm.xml" />
+        <mapping resource="com/cooksys/finals/User.hbm.xml" />
+        <mapping resource="com/cooksys/finals/City.hbm.xml" />
+        <mapping resource="com/cooksys/finals/CustomerList.hbm.xml" />
+        <mapping resource="com/cooksys/finals/Staff.hbm.xml" />
+        <mapping resource="com/cooksys/finals/FilmCategory.hbm.xml" />
+        <mapping resource="com/cooksys/finals/Address.hbm.xml" />
+        <mapping resource="com/cooksys/finals/Category.hbm.xml" />
+        <mapping resource="com/cooksys/finals/Store.hbm.xml" />
+        <mapping resource="com/cooksys/finals/FilmActor.hbm.xml" />
+        <mapping resource="com/cooksys/finals/Film.hbm.xml" />
+        <mapping resource="com/cooksys/finals/FilmText.hbm.xml" />
+        <mapping resource="com/cooksys/finals/ActorInfo.hbm.xml" />
+        <mapping resource="com/cooksys/finals/StaffList.hbm.xml" />
+    </session-factory>
+</hibernate-configuration>

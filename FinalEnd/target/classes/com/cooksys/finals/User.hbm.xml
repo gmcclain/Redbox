@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Aug 26, 2014 11:34:37 AM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.cooksys.finals.User" table="user" catalog="sakila">
+        <id name="userId" type="java.lang.Short">
+            <column name="user_id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="customer" class="com.cooksys.finals.Customer" fetch="select">
+            <column name="customer_id" not-null="true" />
+        </many-to-one>
+        <property name="username" type="string">
+            <column name="username" length="45" not-null="true" unique="true" />
+        </property>
+        <property name="password" type="string">
+            <column name="password" length="45" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

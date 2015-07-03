@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+</h:head>
+<h:body>
+	<h:form>
+		<p:growl id="registerError" showDetail="true" for="registerError" />
+		<p:panelGrid columns="2">
+			<f:facet name="header">
+				<p:outputLabel value="Registration" />
+			</f:facet>
+			<p:outputLabel value="New User Name: " />
+			<p:inputText value="${registrationBean.userName}" />
+
+			<p:outputLabel value="New User Password: " />
+			<p:password value="${registrationBean.password}" feedback="true" />
+
+			<p:outputLabel value="Reenter Password: " />
+			<p:password value="${registrationBean.password2}" />
+
+			<p:outputLabel value="First Name: " />
+			<p:inputText value="${registrationBean.firstName}" />
+
+			<p:outputLabel value="Last Name: " />
+			<p:inputText value="${registrationBean.lastName}" />
+
+			<p:outputLabel value="Address line 1: " />
+			<p:inputText value="${registrationBean.address}" />
+
+			<p:outputLabel value="Address line 2: " />
+			<p:inputText value="${registrationBean.address2}" />
+
+			<p:outputLabel value="City: " />
+			<p:autoComplete value="${registrationBean.cityName}"
+				completeMethod="#{registrationBean.completeCity}" />
+
+			<p:outputLabel value="State/Province/District:" />
+			<p:inputText value="${registrationBean.district}" />
+			
+			<p:outputLabel value="Country: " />
+			<p:autoComplete value="${registrationBean.countryName}"
+				completeMethod="#{registrationBean.completeCountry}" />
+				
+			<p:outputLabel value="Zip/Postal Code:" />
+			<p:inputText value="${registrationBean.postalCode}" />
+			<f:facet name="footer">
+				<p:commandButton value="Register New User"
+					action="${registrationBean.register()}" update="registerError" />
+			</f:facet>
+		</p:panelGrid>
+	</h:form>
+</h:body>
+</html>

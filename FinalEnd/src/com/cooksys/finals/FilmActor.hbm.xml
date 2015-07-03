@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Aug 26, 2014 11:34:37 AM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.cooksys.finals.FilmActor" table="film_actor" catalog="sakila">
+        <composite-id name="id" class="com.cooksys.finals.FilmActorId">
+            <key-property name="actorId" type="short">
+                <column name="actor_id" />
+            </key-property>
+            <key-property name="filmId" type="short">
+                <column name="film_id" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="actor" class="com.cooksys.finals.Actor" update="false" insert="false" fetch="select">
+            <column name="actor_id" not-null="true" />
+        </many-to-one>
+        <many-to-one name="film" class="com.cooksys.finals.Film" update="false" insert="false" fetch="select">
+            <column name="film_id" not-null="true" />
+        </many-to-one>
+        <property name="lastUpdate" type="timestamp">
+            <column name="last_update" length="19" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

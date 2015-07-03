@@ -1,0 +1,49 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+</h:head>
+<h:body>
+	<h:form>
+		<p:dataTable var="film" value="#{searchBean.matchingFilms}" rows="10"
+			paginator="true"
+			paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+			rowsPerPageTemplate="5,10,20">
+			<f:facet name="header">
+				<p:outputLabel value="Search Title:" />
+				<p:inputText value="${searchBean.searchTitle}" />
+				<p:outputLabel value="Genre:" />
+				<p:inputText value="${searchBean.searchGenre}" />
+				<p:commandButton value="Search" action="#{searchBean.search}" />
+			</f:facet>
+			<p:column headerText="Title">
+				<p:outputLabel value="#{film.title}" />
+			</p:column>
+			<p:column headerText="Description">
+				<p:dataList value="#{film.description}" var="description">
+					<p:outputLabel value="#{description}" />
+				</p:dataList>
+			</p:column>
+			<p:column>
+				<p:commandButton value="Add to Cart"
+					action="#{cartBean.addToCart(film)}"
+					rendered="#{!cartBean.isInCart(film)}" ajax="false" />
+				<p:commandButton value="Remove from Cart"
+					action="#{cartBean.removeFromCart(film)}"
+					rendered="#{cartBean.isInCart(film)}" ajax="false" />
+			</p:column>
+			<f:facet name="footer">
+				<p:commandButton value="Log Out" action="#{loginBean.logout}" />
+				<p:commandButton value="Review Cart" action="cart.xhtml?faces-redirect=true" />
+				<p:commandButton value="View Rentals" action="renting.xhtml?faces-redirect=true" />
+				<p:commandButton value="Edit User Info" action="user.xhtml?faces-redirect=true" />
+			</f:facet>
+		</p:dataTable>
+	</h:form>
+</h:body>
+</html>

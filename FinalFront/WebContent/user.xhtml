@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+</h:head>
+<h:body>
+	<h:form>
+		<p:panelGrid columns="2">
+			<f:facet name="header">
+				<p:outputLabel value="User Settings for #{userBean.userName}" />
+			</f:facet>
+
+			<p:outputLabel value="First Name: " />
+			<p:inputText value="${userBean.firstName}" />
+
+			<p:outputLabel value="Last Name: " />
+			<p:inputText value="${userBean.lastName}" />
+
+			<p:outputLabel value="Address line 1: " />
+			<p:inputText value="${userBean.address1}" />
+
+			<p:outputLabel value="Address line 2: " />
+			<p:inputText value="${userBean.address2}" />
+
+			<p:outputLabel value="City: " />
+			<p:autoComplete value="${userBean.cityName}"
+				completeMethod="#{registrationBean.completeCity}" />
+			<p:outputLabel value="Country: " />
+			<p:autoComplete value="${userBean.countryName}"
+				completeMethod="#{registrationBean.countryName}" />
+			<p:outputLabel value="State/Province/District:" />
+			<p:inputText value="${userBean.district}" />
+
+			<p:outputLabel value="Zip/Postal Code:" />
+			<p:inputText value="${userBean.postalCode}" />
+			<f:facet name="footer">
+				<p:commandButton value="Log Out" action="#{loginBean.logout}"/>
+				<p:commandButton value="Save Changes" action="${userBean.save()}" />
+				<p:commandButton value="Discard Changes" action="search.xhtml?faces-redirect=true" />
+			</f:facet>
+		</p:panelGrid>
+	</h:form>
+</h:body>
+</html>

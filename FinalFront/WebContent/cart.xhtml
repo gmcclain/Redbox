@@ -1,0 +1,36 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+</h:head>
+<h:body>
+	<h:form>
+		<p:dataTable value="#{cartBean.filmsInCart}" var="film">
+			<f:facet name="header">
+            	Movies in Cart
+        	</f:facet>
+			<p:column headerText="Title">
+				<p:outputLabel value="#{film.title}" />
+			</p:column>
+			<p:column>
+				<p:commandButton value="Remove from Cart"
+					action="#{cartBean.removeFromCart(film)}"
+					rendered="#{cartBean.isInCart(film)}" ajax="false" />
+			</p:column>
+			<f:facet name="footer">
+				<p:growl id="error" showDetail="true" for="checkoutError" />
+				<p:commandButton value="Return to Movie Search"
+					action="search.xhtml?faces-redirect=true" />
+				<p:commandButton value="Checkout"
+					action="#{cartBean.reservationRequest}" update="error" />
+			</f:facet>
+		</p:dataTable>
+	</h:form>
+</h:body>
+</html>
+
